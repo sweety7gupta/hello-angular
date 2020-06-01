@@ -1,0 +1,15 @@
+<h3>Fetching Data From API</h3>
+<div class="box">
+  <button class="btn" (click)="fetchData()">Click Here</button>
+
+  <input class="textbox" (input)="updateTxtName($event)">
+  <button class="add-btn" (click)="addName()">Add</button>
+
+  <input class="textbox" (input)="filter($event)">
+
+  <ul class="section">
+    <ul class="data">
+      <li *ngFor="let name of names" [ngClass]="getClassName(name)">{{name}}</li>
+    </ul>
+  </ul>
+</div>
