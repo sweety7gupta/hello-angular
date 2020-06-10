@@ -1,2 +1,18 @@
 <h3>Food Menu</h3>
 
+
+<div *ngFor='let foodItem of foodItems' class="container">
+    <img class="image" src='{{foodItem.foodImage}}' >
+    <div class="shimmer" *ngIf="foodItems.length <= 0">
+        <div class="shimmer-row"></div>
+        <div class="shimmer-row"></div>
+        <div class="shimmer-row"></div>
+        <div class="shimmer-row"></div>
+        <div class="shimmer-row"></div>
+        <div class="shimmer-row"></div>
+    </div>
+    <div class="description">{{foodItem.foodName}}</div>
+    <div class="section">{{foodItem.foodPrice}}</div>
+    <div class="section">{{foodItem.foodDesc}}</div>
+</div>
+
