@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FoodService } from '../services/food.service'
+import currencyList from 'src/app/currency-list';
 
 @Component({
 	selector: 'app-food-menu',
@@ -7,6 +8,8 @@ import { FoodService } from '../services/food.service'
 	styleUrls: ['./food-menu.component.css']
 })
 export class FoodMenuComponent implements OnInit {
+	currencyList = {};
+	currency = "USD";
 	foodItems = [];
 
 	constructor( 
@@ -16,6 +19,8 @@ export class FoodMenuComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		this.currencyList = currencyList;
+
 		this.foodService.getFoodItems()
 			.subscribe((response) => { 
 				this.foodItems = response as any;
